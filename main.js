@@ -12,7 +12,7 @@ addTodo = (e) => {
     //li creating
 
     const newTodo = document.createElement('li');
-    newTodo.innerText = 'test'
+    newTodo.innerText = todoInput.value;
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
 
@@ -33,9 +33,30 @@ addTodo = (e) => {
     //append to list
 
     todoList.appendChild(todoDiv);
+
+    //clear input value
+
+    todoInput.value = '';
+}
+
+deleteCheck = (e) => {
+    const item = e.target;
+    if (item.classList[0] === 'trash-btn') { //delete todo
+        const todo = item.parentElement;
+        todo.classList.add('fall');
+        todo.addEventListener('transitionend', () => {
+            todo.remove();
+        });
+    }
+
+    if (item.classList[0] === 'complete-btn') { //check mark
+        const todo = item.parentElement;
+        todo.classList.toggle('completed');
+    }
 }
 
 
 //events 
 
 todoButton.addEventListener('click', addTodo);
+todoList.addEventListener('click', deleteCheck);

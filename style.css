@@ -18,7 +18,7 @@ header {
 
 header, 
 form {
-    min-height: 30vh;
+    min-height: 18vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +67,7 @@ form button:hover {
     font-size: 1.7rem;
     justify-content: space-between;
     align-items: center;
-    transition: all .3s ease;
+    transition: all .4s ease;
     border-radius: 5px;
 }
 
@@ -90,5 +90,24 @@ form button:hover {
 .complete-btn {
     background: #82bb53;
     border-radius: 0;
+}
+
+.todo-item {
+    padding: 0 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
+    pointer-events: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
 }
 
