@@ -111,3 +111,42 @@ form button:hover {
     opacity: 0;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+select{ 
+    color: #295991;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.select::after {
+    content:'\25BC';
+    position: absolute;
+    background: #fff;
+    color: #295991;
+    top: 0;
+    right: 0;
+    padding: 14px;
+    pointer-events: none;
+    transition: all .3s ease;
+    border-radius: 0 5px 5px 0;
+}
+
+.select:hover::after{
+    background: #295991;
+    color:#fff;
+}
+
